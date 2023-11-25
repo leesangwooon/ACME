@@ -132,7 +132,7 @@ statistics 테이블의 모든 객체를 삭제 (TinyDB Table.truncate() 이용)
 requests 테이블에 인자로 받은 request를 추가 (TinyDB Table.insert() 이용)
 - 인자로 받은 response JSON 파일에서 rsc 키값이 존재하면 해당 값을, 만약 존재하지 않으면 ResponseStatusCode.UNKNOWN을 테이블의 'rsc' 객체에 저장
 - 'req', 'rsp' 객체의 경우 none 이 아닌 경우 저장
-- 'ts' 타임 스탬프 정보도 함께 저장
+- 'ts' 타임 스탬프 정보 저장
 request insert 성공 여부를 bool 타입으로 반환
 
 #### getRequests()
