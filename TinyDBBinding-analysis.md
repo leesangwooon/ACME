@@ -143,11 +143,20 @@ ri값이 특정되거나 존재하지 않을 경우 테이블의 모든 request 
 존재하는 ri 값이 전달되면 해당 ri에 대한 request 리소스 remove (TinyDB Table.remove() 이용)
 ri값이 특정되거나 존재하지 않을 경우 request 테이블 전체 remove (TinyDB Table.truncate() 이용)
 
-## Schedules	 		
+## Schedules - schedules table
 <img width="348" alt="image" src="https://github.com/leesangwooon/ACME/assets/144790879/a827561c-b13b-4046-8637-a174680025c8">
 
-#### getSchedules()
-#### getSchedule()
+#### getSchedules(self)
+schedules 테이블의 모든 객체를 리스트로 반환   (TinyDB Table.all() 이용)
+
+#### getSchedule(self, ri:str)
+schedules 테이블에서 인자로 전달받은 ri에 해당하는 schedule 객체 반환 (TinyDB Table.get() 이용)
+
 #### searchSchedules()
+schedules table에서 인자로 전달받은 pi에 대한 schedule을 쿼리하여 리스트로 반환 (TinyDB Query(), Table.search() 이용)
+
 #### upsertSchedule()
+JSON 형식의 actionRepr 내 'ri' 키에 대응하는 리소스의 schedule을 update (TinyDB Table.update() 이용)
+
 #### removeSchedule()
+schedules 테이블에서 인자로 전달받은 ri에 해당하는 schedule을 삭제한 후, 삭제 여부를 bool로 반환 (TinyDB Table.remove() 이용)
