@@ -114,15 +114,27 @@ statistics 테이블에 이미 데이터가 있다면 update(), 데이터가 없
 #### purgeStatistics()
 statistics 테이블의 모든 객체를 삭제 (TinyDB Table.truncate() 이용)
 
-## Actions	 			
+## Actions - actions table
 <img width="347" alt="image" src="https://github.com/leesangwooon/ACME/assets/144790879/eaeb8beb-b4bd-4d06-a65a-b4c2860220c5">
 
 #### searchActionReprs()
+action 테이블의 모든 객체를 반환, 테이블이 empty인 경우 none 반환 (TinyDB Table.all() 이용)
+
 #### getAction()
+actions 테이블에서 인자로 전달받은 ri에 해당하는 첫 번째 action 객체를 반환 (TinyDB Table.get() 이용)
+
 #### searchActionsDeprsForSubject()
+actions 테이블에서 인자로 전달받은 ri에 해당하는 모든 action 객체를 반환  (TinyDB Query(), Table.search() 이용)
+
 #### upsertActionRepr()
-#### updateActionRepr(()
+ACTR 타입의 action 객체을 인자로 받아 지정된 'ri'에 action을 upsert (TinyDB Table.upsert() 이용)
+
+#### updateActionRepr()
+JSON 형식의 actionRepr을 인자로 받아 지정된 'ri'에 update (TinyDB Table.update 이용)
+
 #### removeActionRepr()
+actions 테이블에서 인자로 전달받은 ri에 해당하는 action 객체를 조회하고 해당되는 action을 삭제 (TinyDB Table.get/remove() 이용)
+삭제 여부 bool 타입으로 반환
 
 ## Requests - requests table
 <img width="348" alt="image" src="https://github.com/leesangwooon/ACME/assets/144790879/8773b28b-34c3-4d76-a1d2-cc8b9a274a88">
@@ -150,10 +162,10 @@ ri값이 특정되거나 존재하지 않을 경우 request 테이블 전체 rem
 schedules 테이블의 모든 객체를 리스트로 반환   (TinyDB Table.all() 이용)
 
 #### getSchedule(self, ri:str)
-schedules 테이블에서 인자로 전달받은 ri에 해당하는 schedule 객체 반환 (TinyDB Table.get() 이용)
+schedules 테이블에서 인자로 전달받은 ri에 해당하는 첫 번째 schedule 객체를 반환 (TinyDB Table.get() 이용)
 
 #### searchSchedules()
-schedules table에서 인자로 전달받은 pi에 대한 schedule을 쿼리하여 리스트로 반환 (TinyDB Query(), Table.search() 이용)
+schedules table에서 인자로 전달받은 pi에 대한 모든 schedule을 쿼리하여 리스트로 반환 (TinyDB Query(), Table.search() 이용)
 
 #### upsertSchedule()
 JSON 형식의 actionRepr 내 'ri' 키에 대응하는 리소스의 schedule을 update (TinyDB Table.update() 이용)
